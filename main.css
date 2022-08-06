@@ -43,9 +43,9 @@ body {
     transform: rotateX(calc(var(--i)*45deg)) translateZ(250px);
 }
 
-.slider span .on {
+/* .slider span .on {
     transform: scale(1.0);
-}
+} */
 
 .slider span img {
     position: absolute;
