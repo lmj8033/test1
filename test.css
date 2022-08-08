@@ -13,22 +13,19 @@ body {
 
 /* SUN */
 .sun {
+    background-image: url(./sun1.png);
     display: flex;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     position: absolute;
-    transform: translate(65vh, 50vh);
-    /* transition: 2s; */
+    transform: translate(56vh, 50vh);
+    height: 100vh;
+    width: 100vh;
+    /* animation: rotate 5s linear infinite; */
 }
 
-.sun .sun_pic {
-    height: 90vh;
-    width: 90vh;
-    border-radius: 50%;
-}
-
-.sun.animate .sun_pic {
+.sun.animate {
     transition: 5s;
-    transform: translate(-85vh, 80vh) scale(1.1);
+    transform: translate(-13vh, 118vh) scale(1.1);
 }
 
 /* PLANET */
@@ -41,7 +38,7 @@ body {
     width: 90vh;
     left: 100vh;
     top: 130vh;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     opacity: 0;
     transition: 1s;
 }
@@ -85,14 +82,18 @@ body {
     box-shadow: 0px 0px 5px;
     border-radius: 50%;
     transition: 0.5s;
-    background-repeat: repeat;
-    background-image: url(./planet1.png);
+    background-repeat: no-repeat;
+    cursor: pointer;;
+}
+
+.wrapper .card .img:hover {
+    transform: scale(1.1);
 }
 
 /* 이미지 hover 했을 때 자전하는 것처럼 표현 */
-.wrapper .card .img:hover {
+/* .wrapper .card .img:hover {
     animation: rotate 15s linear infinite;
-}   
+}    */
 
 /* EXPLORE 버튼 */
 .card>a {
@@ -101,11 +102,11 @@ body {
     border-radius: 25px;
     background: linear-gradient(to bottom, #bea2e7 0%, #86b7e7 100%);
     color: #fff;
-    transition: 0.5s;
+    transition: 0.8s;
 }
 
 .card>a:hover {
-    color: #d4c6e8;
+    color: black;
 }
 
 /* 우주선 이모티콘 */
@@ -117,10 +118,16 @@ body {
     left: -8vh;
     z-index: 1;
     animation: spaceship 10s linear infinite;
+    opacity: 0;
 }
 
+.spaceship.on i {
+    opacity: 1;
+}
+
+
 /* 점프하는 사람 이모티콘 */
-.jp i {
+/* .jp i {
     font-size: 30px;
     color: red;
     position: absolute;
@@ -128,7 +135,7 @@ body {
     left: 132vh;
     z-index: 1;
     animation: jump 4s linear infinite;
-}
+} */
 
 /* 슬라이드 애니메이션 */
 @keyframes animate {
@@ -182,28 +189,24 @@ body {
 
 /* 우주선 애니메이션 */
 @keyframes spaceship {
-    0% {
-        transform: translate(0,0) rotate(0deg);
-    }
-
-    25% {
-        transform: translate(70vh, -70vh) rotate(-270deg);
-    }
-
-    50%{
-        transform: translate(40vh,-40vh);
-        z-index: 0;
-    } 
-
-    75% {
-        transform: translate(20vh,-20vh) rotate(-120deg);
-        z-index: 0;
-
-    }
-
-    100% {
-        transform: translate(0,0) rotate(0deg);
-    } 
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(40vh, -40vh) rotate(-270deg);
+  }
+  50% {
+    transform: translate(80vh, -80vh) rotate(100deg);
+  }
+  75% {
+    transform: translate(40vh, -40vh);
+  }
+  100% {
+    z-index: 0;
+  }
 }
+/* 
 
-
+.card>.earth:active .card .content .img{
+    transform: scale(5.0);
+} */
