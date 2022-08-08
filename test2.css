@@ -1,0 +1,15 @@
+.circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    animation: rotate 5s linear infinite;
+    background-repeat: repeat;
+
+}
+
+@keyframes rotate {
+    to{ 
+        background-position: -200%, 0;
+    } 
+    
+}
